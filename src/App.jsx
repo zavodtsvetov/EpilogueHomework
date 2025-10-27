@@ -1,6 +1,6 @@
 import { Info } from "./components/Info/Info";
 import { Field } from "./components/Field/Field";
-import s from "./App.module.css";
+import "./App.css";
 import { Component } from "react";
 import { connect } from "react-redux";
 
@@ -11,7 +11,7 @@ class AppContainer extends Component {
       <button
         disabled={!this.props.field.includes("")}
         onClick={() => this.props.handleReplay()}
-        className={s.restartButton}
+        className="mt-2 text-[80px] border-none bg-none "
       >
         ↺
       </button>
@@ -20,7 +20,7 @@ class AppContainer extends Component {
   render() {
     return (
       <>
-        <div className={s.main}>
+        <div className="mt-10 text-center ">
           <Info />
           <Field />
           {this.startButton}

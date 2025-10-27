@@ -1,10 +1,9 @@
-// import PropTypes from "prop-types";
-// import s from "./Field.module.css";
+import "./Field.css";
 import { connect } from "react-redux";
 import { IS_GAME_ENDED, IS_DRAW, SET_FIELD, SET_STEP } from "../actions/index";
 import { checkWinner } from "../checkWinner";
 import { Component } from "react";
-import s from "./Field.module.css";
+
 let nextId = 0;
 
 class FieldLayoutContainer extends Component {
@@ -28,15 +27,15 @@ class FieldLayoutContainer extends Component {
   render() {
     return (
       <>
-        <div className={s.mainField}>
-          <div className={s.field}>
+        <div className="mt-2 ml-auto mr-auto w-[400px] h-[400px] ">
+          <div className="grid grid-cols-3 grid-rows-3 ">
             {this.props.field.map((item, index) => {
               return (
                 <button
                   onClick={() => {
                     this.handleCLick(item, index);
                   }}
-                  className={s.button}
+                  className="w-[134px] h-[134px] text-[70px]  bg-black-500 active:bg-[#d3f6d2] border border-black p-4 "
                   key={nextId++}
                 >
                   {item}
@@ -57,8 +56,3 @@ const mapStateToProps = (state) => ({
 });
 
 export const FieldLayout = connect(mapStateToProps)(FieldLayoutContainer);
-// export default FieldLayout;
-// FieldLayout.propTypes = {
-// 	field: PropTypes.object,
-// 	handleCLick: PropTypes.func,
-// };

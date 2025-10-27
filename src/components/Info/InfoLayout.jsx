@@ -1,5 +1,4 @@
-// import PropTypes from "prop-types";
-import s from "./Info.module.css";
+import "./Info.css";
 import { connect } from "react-redux";
 import { Component } from "react";
 
@@ -7,11 +6,14 @@ class InfoLayoutContainer extends Component {
   render() {
     return (
       <>
-        <div className={s.status}>
+        <div className="text-[50px]">
           {this.props.isDraw === true ? (
-            <div className={s.draw}>Ничья</div>
+            <div className="text-[50px] text-blue-300">Ничья</div>
           ) : this.props.isGameEnded === true ? (
-            <div className={s.win}> Победил {this.props.currentPlayer}</div>
+            <div className="text-[50px]  text-green-700">
+              {" "}
+              Победил {this.props.currentPlayer}
+            </div>
           ) : (
             `Ходит ${this.props.currentPlayer}`
           )}
@@ -28,9 +30,3 @@ const mapStateToProps = (state) => ({
 });
 
 export const InfoLayout = connect(mapStateToProps)(InfoLayoutContainer);
-
-// InfoLayout.propTypes = {
-// 	currentPlayer: PropTypes.string,
-// 	isDraw: PropTypes.bool,
-// 	isGameEnded: PropTypes.bool,
-// };
