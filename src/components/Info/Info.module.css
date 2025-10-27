@@ -1,0 +1,13 @@
+.status {
+  font-size: 50px;
+}
+
+.win {
+  font-size: 50px;
+  color: green;
+}
+
+.draw {
+  font-size: 50px;
+  color: cadetblue;
+}
